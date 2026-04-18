@@ -1,6 +1,6 @@
 require("dotenv").config();
 const fs = require("fs");
-const getDBConfig = require("./services/secret");
+const getDBConfig = require("../services/secret");
 
 const sslConfig = {
     require: true,
