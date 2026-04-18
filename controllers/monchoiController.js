@@ -49,7 +49,7 @@ class MonChoiController {
         data: data,
       });
     } catch (error) {
-      return res.status(500).json({ message: "Lỗi khi lấy dữ liệu" });
+      return res.status(500).json({ message: error.message });
     }
   }
 

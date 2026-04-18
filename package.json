@@ -24,12 +24,12 @@
     "ngrok": "^5.0.0-beta.2",
     "nodemailer": "^7.0.3",
     "nodemon": "^3.1.10",
-    "pg": "^8.16.0",
+    "pg": "^8.20.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.7",
+    "sequelize": "^6.37.8",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.6.3"
+    "sequelize-cli": "^6.6.5"
   }
 }

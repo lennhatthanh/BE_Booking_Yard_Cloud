@@ -31,14 +31,19 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(methodOverride());
-app.use(cors());
+app.use(cors({
+  origin: "https://d3tsalu92kyy06.cloudfront.net",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/uploads/images", express.static("uploads/images"))
-
+console.log("DB_HOST =", process.env.DB_HOST);
 app.use('/', indexRouter);
 app.use('/auth',authRouter);
 app.use('/nguoi-dung',nguoidungRouter);
@@ -55,7 +60,13 @@ app.use('/ma-giam-gia',magiamgiaRouter);
 app.use('/dat-san',datsanRouter);
 app.use('/su-kien',sukienRouter);
 app.use('/thong-ke',thongkeRouter);
-
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'Server is running',
+    timestamp: new Date()
+  });
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
