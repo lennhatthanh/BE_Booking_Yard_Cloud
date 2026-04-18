@@ -6,7 +6,7 @@ const client = new SecretsManagerClient({
 
 async function getDBConfig() {
     const command = new GetSecretValueCommand({
-        SecretId: "sanbong/prod/postgres",
+        SecretId: "qlsan/dev/db",
     });
 
     const response = await client.send(command);
