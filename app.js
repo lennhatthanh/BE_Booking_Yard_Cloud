@@ -32,7 +32,7 @@ app.set('view engine', 'ejs');
 
 app.use(methodOverride());
 app.use(cors({
-  origin: "https://lnnhatthanh.id.vn/",
+  origin: "https://lnnhatthanh.id.vn",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
