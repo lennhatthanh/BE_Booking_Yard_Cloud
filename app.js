@@ -32,7 +32,7 @@ app.set('view engine', 'ejs');
 
 app.use(methodOverride());
 app.use(cors({
-  origin: "https://d3tsalu92kyy06.cloudfront.net",
+  origin: "https://lnnhatthanh.id.vn/",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
