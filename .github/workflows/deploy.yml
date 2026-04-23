@@ -27,7 +27,8 @@ jobs:
             --document-name "AWS-RunShellScript" \
             --parameters commands="[
               \"cd /var/www/backend\",
+              \"git reset --hard\",
               \"git pull origin main\",
               \"npm install\",
-              \"pm2 restart all || npm start\"
+              \"pm2 restart backend || pm2 start npm --name backend -- start\"
             ]"
